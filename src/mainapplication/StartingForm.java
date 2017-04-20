@@ -220,7 +220,7 @@ public class StartingForm extends javax.swing.JFrame {
     private void useDefaultVocabularyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useDefaultVocabularyRadioButtonActionPerformed
 
         try {
-            Vocabulary vocabulary = VocabularyReader.generateVocabularyFromFile("vocabulary.txt");
+            Vocabulary vocabulary = VocabularyReader.generateVocabularyFromFile("D:/MyProjects/WordsGame/vocabulary.txt");
             currentSession.setComputerVocabulary(vocabulary);
             pathToFileField.setEnabled(false);
             selectFileButton.setEnabled(false);
