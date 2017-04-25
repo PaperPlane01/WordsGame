@@ -26,21 +26,20 @@ import javax.swing.UIManager;
  * @author Администратор
  */
 public class Runner extends JApplet {
-    
+
     public static GameSession currentSession;
- 
-   
+
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         currentSession = new GameSession("Default");
-        
-        
-       java.awt.EventQueue.invokeLater(new Runnable() {
+
+        java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new StartingForm().setVisible(true);
             }
-});
-    }}
+        });
+    }
+}

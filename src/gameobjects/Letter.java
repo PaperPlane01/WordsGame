@@ -8,9 +8,11 @@ import java.util.Objects;
 
 /**
  * Class desdcibing a single letter.
+ *
  * @author User
  */
 public class Letter {
+
     /**
      * Value of the letter.
      */
@@ -24,15 +26,16 @@ public class Letter {
 
     /**
      * Constructor with <Code>Character</Code> object as a parameter.
+     *
      * @param value <Code>Character</Code> equivalent of the letter.
      */
     public Letter(Character value) {
         this.value = value;
     }
-    
-    
+
     /**
      * Allows to receive value of the letter.
+     *
      * @return Character value of the letter.
      */
     public Character getValue() {
@@ -41,22 +44,25 @@ public class Letter {
 
     /**
      * Allows to set a new value using <Code>Character</Code> object.
+     *
      * @param newValue New walue.
      */
     public void setValue(Character newValue) {
         this.value = newValue;
     }
-    
+
     /**
      * Allows to set new value using <Code>Letter</Code> object.
+     *
      * @param newValue New value.
      */
     public void setValue(Letter newValue) {
         this.value = newValue.getValue();
     }
-    
+
     /**
      * Allows to receive string representation of the letter.
+     *
      * @return String representation of the letter.
      */
     @Override
@@ -64,11 +70,10 @@ public class Letter {
         return this.value.toString();
     }
 
-    
-
     /**
      * Allows to receive letter's unique hascode.
      * <b>NOT IMPLEMENTED YET</b>
+     *
      * @return Letter's hashcode.
      */
     @Override
@@ -79,6 +84,7 @@ public class Letter {
 
     /**
      * Allows to know wheter this letter equals to another object
+     *
      * @param obj Object which is to be compared with this letter.
      * @return <Code>True</Code> if this letter equals to another object,
      * <Code>False</Code> if not.
@@ -100,9 +106,5 @@ public class Letter {
         }
         return true;
     }
-    
-    
-    
-    
-    
+
 }

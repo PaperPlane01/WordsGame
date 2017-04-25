@@ -43,38 +43,42 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="65" max="32767" attributes="0"/>
+              <EmptySpace pref="84" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jLabel3" min="-2" pref="131" max="-2" attributes="0"/>
-                  <Component id="playerNameField" min="-2" pref="131" max="-2" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
                       <Component id="computerSelectedRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
                       <Component id="startButton" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
                   </Group>
                   <Component id="humanSelectedRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="selectFileButton" alignment="0" min="-2" pref="105" max="-2" attributes="0"/>
-                  <Component id="pathToFileField" min="-2" pref="141" max="-2" attributes="0"/>
-                  <Component id="useDefaultVocabularyRadioButton" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="enterNumberOfTurnsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="numberOfTurnsField" alignment="0" min="-2" pref="83" max="-2" attributes="0"/>
+                  <Component id="enterNumberOfTurnsLabel" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="pathToFileField" alignment="0" max="32767" attributes="0"/>
+                      <Component id="selectFileButton" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="playerNameField" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="useDefaultVocabularyRadioButton" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLabel3" alignment="0" pref="131" max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="playerNameField" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="useDefaultVocabularyRadioButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               <Component id="pathToFileField" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="selectFileButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
@@ -82,13 +86,13 @@
               <Component id="humanSelectedRadioButton" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="computerSelectedRadioButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="enterNumberOfTurnsLabel" max="32767" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="enterNumberOfTurnsLabel" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="numberOfTurnsField" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="9" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Component id="startButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,7 +100,7 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="selectFileButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Select file"/>
+        <Property name="text" type="java.lang.String" value="&#x412;&#x44b;&#x431;&#x440;&#x430;&#x442;&#x44c; &#x444;&#x430;&#x439;&#x43b;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="selectFileButtonActionPerformed"/>
@@ -104,12 +108,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
-        <Property name="text" type="java.lang.String" value="First turn is made by: "/>
+        <Property name="text" type="java.lang.String" value="&#x41f;&#x435;&#x440;&#x432;&#x44b;&#x439; &#x445;&#x43e;&#x434; &#x434;&#x435;&#x43b;&#x430;&#x435;&#x442;:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="humanSelectedRadioButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Human"/>
+        <Property name="text" type="java.lang.String" value="&#x427;&#x435;&#x43b;&#x43e;&#x432;&#x435;&#x43a;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="humanSelectedRadioButtonActionPerformed"/>
@@ -117,7 +121,7 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="computerSelectedRadioButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Computer"/>
+        <Property name="text" type="java.lang.String" value="&#x41a;&#x43e;&#x43c;&#x43f;&#x44c;&#x44e;&#x442;&#x435;&#x440;"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="computerSelectedRadioButtonActionPerformed"/>
@@ -125,7 +129,7 @@
     </Component>
     <Component class="javax.swing.JButton" name="startButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Start!"/>
+        <Property name="text" type="java.lang.String" value="&#x41d;&#x430;&#x447;&#x430;&#x442;&#x44c;"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
@@ -136,7 +140,9 @@
     </Component>
     <Component class="javax.swing.JRadioButton" name="useDefaultVocabularyRadioButton">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Use default dictionary"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;&lt;b&gt;&#x418;&#x441;&#x43f;&#x43e;&#x43b;&#x44c;&#x437;&#x43e;&#x432;&#x430;&#x442;&#x44c; &#x441;&#x43b;&#x43e;&#x432;&#x430;&#x440;&#x44c; &#x43f;&#x43e; &#x443;&#x43c;&#x43e;&#x43b;&#x447;&#x430;&#x43d;&#x438;&#x44e;&lt;/b&gt;&lt;/html&gt;&quot;" type="code"/>
+        </Property>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="useDefaultVocabularyRadioButtonActionPerformed"/>
@@ -144,14 +150,16 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter your name:"/>
+        <Property name="text" type="java.lang.String" value="&#x412;&#x432;&#x435;&#x434;&#x438;&#x442;&#x435; &#x432;&#x430;&#x448;&#x435; &#x438;&#x43c;&#x44f;:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="playerNameField">
     </Component>
     <Component class="javax.swing.JLabel" name="enterNumberOfTurnsLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Enter number of turns (10 by default):"/>
+        <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+          <Connection code="&quot;&lt;html&gt;&#x412;&#x432;&#x435;&#x434;&#x438;&#x442;&#x435; &#x43a;&#x43e;&#x43b;&#x438;&#x447;&#x435;&#x441;&#x442;&#x432;&#x43e; &#x445;&#x43e;&#x434;&#x43e;&#x432; (10 &#x43f;&#x43e; &#x443;&#x43c;&#x43e;&#x43b;&#x447;&#x430;&#x43d;&#x438;&#x44e;):&lt;/html&gt;&quot;" type="code"/>
+        </Property>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="numberOfTurnsField">

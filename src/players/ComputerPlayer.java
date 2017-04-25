@@ -69,25 +69,25 @@ public class ComputerPlayer extends Player {
     public void getResult() {
 
         if (usedWords.contains(givenWord)) {
-            this.result = new String("This word has already been used." + 
-                    "Please try another one.");
+            this.result = new String("<html>Это слово уже использовалось. </html>" + 
+                    "<html>Попытайтесь ещё раз.</html>");
             return;
         }
         
         if (givenWord.getSize() != 5) {
-            this.result = new String("The word should contain 5 letters.");
+            this.result = new String("<html>Слово должно состоять из 5 букв.</html>");
             return;
         }
         
         if (!vocabulary.contains(givenWord)) {
-            this.result = new String("I don't have such word in my vocabulary. \n"
-                    + "Please try another one.");
+            this.result = new String("<html>Такого слова нет в моём словаре. \n</html>"
+                    + "<html>Попытайтесь ещё раз.<html>");
             System.out.println(givenWord);
             return;
         }
         
         if ((usedWords.size() != 0) && (!Word.areOneLetterDifferent(givenWord, resultWord))) {
-            this.result = new String("This word is not one-letter-different from " +
+            this.result = new String("Это слово не отличается на 1 букву от " +
                     resultWord.toString());
             return;
         }
@@ -107,7 +107,7 @@ public class ComputerPlayer extends Player {
                 break;
             }
 
-            this.result = new String("I couldn't find one-letter-different word :(");
+            this.result = new String("<html>Я не смог найти слово, отличающееся на 1 букву :(</html>");
 
         }
     }

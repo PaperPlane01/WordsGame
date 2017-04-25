@@ -18,7 +18,7 @@ public class GameForm extends javax.swing.JFrame {
     GameSession currentSession;
 
     /**
-     * Creates new form GameForm
+     * Creates new GameForm
      */
     public GameForm() {
         initComponents();
@@ -29,14 +29,14 @@ public class GameForm extends javax.swing.JFrame {
         System.out.println(currentSession.getCurrentPlayerID());
         
         if (currentSession.getCurrentPlayerID() == 1) {
-            rulesLabel.setText("<html>Enter the word which is one-letter-different</html>");
+            rulesLabel.setText("<html>Введите слово, отличающееся на 1 букву: </html>");
             currentSession.firstComputerTurn();
             resultLabel.setText(currentSession.getTurnResult());
             return;
         }
         
         if (currentSession.getCurrentPlayerID() == 2) {
-            rulesLabel.setText("<html>Enter any five-letter word</html>");
+            rulesLabel.setText("<html>Введите слово, состоящее из 5 букв:</html>");
             resultLabel.setVisible(false);
             return;
         }
@@ -60,8 +60,7 @@ public class GameForm extends javax.swing.JFrame {
         giveUpButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         gameFormMenu = new javax.swing.JMenu();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        showReferenceMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFocusable(false);
@@ -71,7 +70,7 @@ public class GameForm extends javax.swing.JFrame {
         resultLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         resultLabel.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(125, 165, 179), new java.awt.Color(228, 248, 242), new java.awt.Color(178, 207, 207), new java.awt.Color(215, 242, 240)));
 
-        enterWordButton.setText("Enter the word");
+        enterWordButton.setText("Введите слово");
         enterWordButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enterWordButtonActionPerformed(evt);
@@ -82,27 +81,26 @@ public class GameForm extends javax.swing.JFrame {
         rulesLabel.setText("<html>Enter the word which is one-letter different</html>");
         rulesLabel.setFocusable(false);
 
-        giveUpButton.setText("Give up");
+        playerNameLabel.setText("Default");
+
+        giveUpButton.setText("Сдаться");
         giveUpButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 giveUpButtonActionPerformed(evt);
             }
         });
 
-        gameFormMenu.setText("About programm");
+        gameFormMenu.setText("О программе");
 
-        jMenuItem2.setText("Show reference");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+        showReferenceMenuItem.setText("Показать справку");
+        showReferenceMenuItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
+                showReferenceMenuItemActionPerformed(evt);
             }
         });
-        gameFormMenu.add(jMenuItem2);
+        gameFormMenu.add(showReferenceMenuItem);
 
         jMenuBar1.add(gameFormMenu);
-
-        jMenu3.setText("Edit");
-        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -111,45 +109,40 @@ public class GameForm extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(472, Short.MAX_VALUE)
                 .addComponent(playerNameLabel)
-                .addGap(179, 179, 179))
+                .addGap(57, 57, 57)
+                .addComponent(playerScoreLabel)
+                .addGap(58, 58, 58))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(208, Short.MAX_VALUE)
+                .addGap(125, 125, 125)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(resultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(giveUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(enterWordButton, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(newWordField, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(rulesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
-                        .addComponent(playerScoreLabel)
-                        .addGap(57, 57, 57))))
+                    .addComponent(resultLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rulesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(giveUpButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(newWordField, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(enterWordButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addComponent(playerNameLabel)
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rulesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(playerScoreLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(playerScoreLabel)
+                    .addComponent(playerNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(rulesLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
                 .addComponent(resultLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(newWordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addComponent(enterWordButton)
                 .addGap(32, 32, 32)
                 .addComponent(giveUpButton)
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(42, Short.MAX_VALUE))
         );
 
         pack();
@@ -159,22 +152,22 @@ public class GameForm extends javax.swing.JFrame {
     private void enterWordButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enterWordButtonActionPerformed
         resultLabel.setVisible(true);
         resultLabel.setText("");
-        rulesLabel.setText("<html>Enter the word which is one-letter-different<html>");
+        rulesLabel.setText("<html>Введите слово, отличающееся на 1 букву:<html>");
         currentSession.setCurrentPlayer(2);
         Word givenWord = new Word(newWordField.getText());
         currentSession.nextHumanTurn(givenWord);
-        playerScoreLabel.setText("Your score: " + currentSession.getScore());
+        playerScoreLabel.setText("Ваш счёт: " + currentSession.getScore());
         resultLabel.setText(currentSession.getTurnResult().toString());
         newWordField.setText("");
         
         if (currentSession.isHumanReachedVictory()) {
-            rulesLabel.setText("You have won!\n" + rulesLabel.getText().toString());
+            rulesLabel.setText("<html>Вы победили!</html>" + rulesLabel.getText().toString());
         }
 
     }//GEN-LAST:event_enterWordButtonActionPerformed
 
     private void giveUpButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_giveUpButtonActionPerformed
-        JOptionPane.showConfirmDialog(null, new String ("Are you sure that you want to give up?"));
+        JOptionPane.showConfirmDialog(null, new String ("Вы уверены, что ходите сдаться?"));
         
         if (JOptionPane.OK_OPTION == 0) {
             this.setVisible(false);
@@ -183,9 +176,10 @@ public class GameForm extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_giveUpButtonActionPerformed
 
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
+    private void showReferenceMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showReferenceMenuItemActionPerformed
+       ReferenceForm reference = new ReferenceForm();
+       reference.setVisible(true);
+    }//GEN-LAST:event_showReferenceMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -227,13 +221,12 @@ public class GameForm extends javax.swing.JFrame {
     private javax.swing.JButton enterWordButton;
     private javax.swing.JMenu gameFormMenu;
     private javax.swing.JButton giveUpButton;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JTextField newWordField;
     private javax.swing.JLabel playerNameLabel;
     private javax.swing.JLabel playerScoreLabel;
     private javax.swing.JLabel resultLabel;
     private javax.swing.JLabel rulesLabel;
+    private javax.swing.JMenuItem showReferenceMenuItem;
     // End of variables declaration//GEN-END:variables
 }

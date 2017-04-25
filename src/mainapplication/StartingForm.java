@@ -5,14 +5,11 @@
  */
 package mainapplication;
 
-import vocabularyreader.VocabularyReader;
 import gameobjects.Vocabulary;
 import gameobjects.Word;
 import gameprocess.GameSession;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -63,31 +60,32 @@ public class StartingForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Words game");
         setBackground(new java.awt.Color(255, 204, 204));
+        setPreferredSize(new java.awt.Dimension(276, 480));
 
-        selectFileButton.setText("Select file");
+        selectFileButton.setText("Выбрать файл");
         selectFileButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectFileButtonActionPerformed(evt);
             }
         });
 
-        jLabel1.setText("First turn is made by: ");
+        jLabel1.setText("Первый ход делает:");
 
-        humanSelectedRadioButton.setText("Human");
+        humanSelectedRadioButton.setText("Человек");
         humanSelectedRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 humanSelectedRadioButtonActionPerformed(evt);
             }
         });
 
-        computerSelectedRadioButton.setText("Computer");
+        computerSelectedRadioButton.setText("Компьютер");
         computerSelectedRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 computerSelectedRadioButtonActionPerformed(evt);
             }
         });
 
-        startButton.setText("Start!");
+        startButton.setText("Начать");
         startButton.setEnabled(false);
         startButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,50 +93,52 @@ public class StartingForm extends javax.swing.JFrame {
             }
         });
 
-        useDefaultVocabularyRadioButton.setText("Use default dictionary");
+        useDefaultVocabularyRadioButton.setText("<html><b>Использовать словарь по умолчанию</b></html>");
         useDefaultVocabularyRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 useDefaultVocabularyRadioButtonActionPerformed(evt);
             }
         });
 
-        jLabel3.setText("Enter your name:");
+        jLabel3.setText("Введите ваше имя:");
 
-        enterNumberOfTurnsLabel.setText("Enter number of turns (10 by default):");
+        enterNumberOfTurnsLabel.setText("<html>Введите количество ходов (10 по умолчанию):</html>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(65, Short.MAX_VALUE)
+                .addContainerGap(84, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(playerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(computerSelectedRadioButton, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(startButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(humanSelectedRadioButton)
-                    .addComponent(selectFileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pathToFileField, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(useDefaultVocabularyRadioButton)
-                    .addComponent(enterNumberOfTurnsLabel)
-                    .addComponent(numberOfTurnsField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25))
+                    .addComponent(numberOfTurnsField, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(enterNumberOfTurnsLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(pathToFileField, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(selectFileButton, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addComponent(playerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(useDefaultVocabularyRadioButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)))
+                .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
+                .addGap(41, 41, 41)
                 .addComponent(jLabel3)
                 .addGap(26, 26, 26)
                 .addComponent(playerNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(useDefaultVocabularyRadioButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(20, 20, 20)
                 .addComponent(pathToFileField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(selectFileButton)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
@@ -146,26 +146,30 @@ public class StartingForm extends javax.swing.JFrame {
                 .addComponent(humanSelectedRadioButton)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(computerSelectedRadioButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(enterNumberOfTurnsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(enterNumberOfTurnsLabel)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(numberOfTurnsField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(startButton)
-                .addGap(44, 44, 44))
+                .addGap(65, 65, 65))
         );
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+/**
+     * Allows user to select vocabulary file manually.
+     *
+     * @param evt
+     */
     private void selectFileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectFileButtonActionPerformed
         JFileChooser chooser = new JFileChooser();
         chooser.showOpenDialog(null);
         File vocabularyAsFile = chooser.getSelectedFile();
         String filePath = vocabularyAsFile.getAbsolutePath();
         try {
-            Vocabulary vocabulary = VocabularyReader.generateVocabularyFromFile(filePath);
+            Vocabulary vocabulary = Vocabulary.generateVocabularyFromFile(filePath);
             pathToFileField.setText(filePath);
             currentSession.setComputerVocabulary(vocabulary);
         } catch (IOException ex) {
@@ -187,32 +191,35 @@ public class StartingForm extends javax.swing.JFrame {
 
     private void startButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startButtonActionPerformed
 
-        currentSession.getHumanPlayer().setName(playerNameField.getText());
+        if (playerNameField.getText().length() != 0) {
+            currentSession.getHumanPlayer().setName(playerNameField.getText());
+        }
 
         if (computerSelectedRadioButton.isSelected()) {
             currentSession.setCurrentPlayer(1);
         }
 
         if (humanSelectedRadioButton.isSelected()) {
-            currentSession.setCurrentPlayer(2); }
+            currentSession.setCurrentPlayer(2);
+        }
 
-            if (numberOfTurnsField.getText().length() != 0) {
-                try {
-                    Integer numberOfTurns = Integer.parseInt(numberOfTurnsField.getText());
-                    currentSession.setFinalNumberOfTurns(numberOfTurns);
+        if (numberOfTurnsField.getText().length() != 0) {
+            try {
+                Integer numberOfTurns = Integer.parseInt(numberOfTurnsField.getText());
+                currentSession.setFinalNumberOfTurns(numberOfTurns);
 
-                    new GameForm().setVisible(true);
-                    this.setVisible(false);
-                } catch (NumberFormatException ex) {
-                    JOptionPane.showMessageDialog(null, "Invalid value of number of turns."
-                            + "The value should be integer.");
-                }
-
-            } else {
-                currentSession.setFinalNumberOfTurns(10);
                 new GameForm().setVisible(true);
                 this.setVisible(false);
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(null, "Неверное количество ходов."
+                        + "Количество ходов должно быть целым числом");
             }
+
+        } else {
+            currentSession.setFinalNumberOfTurns(10);
+            new GameForm().setVisible(true);
+            this.setVisible(false);
+        }
 
 
     }//GEN-LAST:event_startButtonActionPerformed
@@ -220,14 +227,14 @@ public class StartingForm extends javax.swing.JFrame {
     private void useDefaultVocabularyRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_useDefaultVocabularyRadioButtonActionPerformed
 
         try {
-            Vocabulary vocabulary = VocabularyReader.generateVocabularyFromFile("D:/MyProjects/WordsGame/vocabulary.txt");
+            Vocabulary vocabulary = Vocabulary.generateVocabularyFromFile("vocabulary.txt");
             currentSession.setComputerVocabulary(vocabulary);
             pathToFileField.setEnabled(false);
             selectFileButton.setEnabled(false);
         } catch (IOException ex) {
             Logger.getLogger(StartingForm.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, new String("Oops! Looks like something went wrong."
-                    + "Please try to choose vocabulary file manually."));
+            JOptionPane.showMessageDialog(null, new String("Ой! Кажется, что-то пошло не так. "
+                    + "Пожалуйста, укажите файл словаря вручную."));
             if (useDefaultVocabularyRadioButton.isSelected()) {
                 useDefaultVocabularyRadioButton.setSelected(false);
             }

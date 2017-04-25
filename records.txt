@@ -1,1 +1,5 @@
-user    0
+
+chaos   10000
+User   100
+
+User   200

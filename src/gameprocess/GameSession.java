@@ -5,7 +5,6 @@
  */
 package gameprocess;
 
-import vocabularyreader.VocabularyReader;
 import gameobjects.Vocabulary;
 import gameobjects.Word;
 import players.ComputerPlayer;
